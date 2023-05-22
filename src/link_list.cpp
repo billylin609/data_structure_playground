@@ -20,6 +20,7 @@ link_list::link_list(uint8_t value) {
 }
 
 Std_ReturnType link_list::push(uint8_t value) {
+	HOLD = HEAD;
 	while(HOLD -> ptr) {
 		HOLD = HOLD->ptr;
 	}
@@ -29,6 +30,17 @@ Std_ReturnType link_list::push(uint8_t value) {
 	HOLD -> ptr = temp_node;
 	HOLD = HEAD;
 	return E_OK;
+}
+
+uint8_t link_list::pull() {
+	if (HOLD != NULL) {
+		uint8_t data_clone = HOLD -> value;
+		HOLD = HOLD -> ptr;
+		return data_clone;
+	} else {
+		printf("This is the end of the link list\n");
+		return 0;
+	}
 }
 
 link_list::~link_list() {
@@ -45,6 +57,17 @@ int main() {
 	link_list test;
 	test.push(2);
 	test.push(12);
+	printf("the value is: %d\n", test.pull());
+	printf("the value is: %d\n", test.pull());
+	printf("the value is: %d\n", test.pull());
+	printf("the value is: %d\n", test.pull());
+	printf("the value is: %d\n", test.pull());
+	test.push(10);	
+	printf("the value is: %d\n", test.pull());
+	printf("the value is: %d\n", test.pull());
+	printf("the value is: %d\n", test.pull());
+	printf("the value is: %d\n", test.pull());
+	printf("the value is: %d\n", test.pull());
 
 	link_list test1(10);
 	test1.push(11);

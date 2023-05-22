@@ -15,6 +15,7 @@ typedef struct{
 
 typedef node_group* node_group_ptr;
 
+
 class link_list{
 	private:
 		/*create a temporily node for data store*/
@@ -46,8 +47,8 @@ class link_list{
 		/*add a element to the end of the link list*/
 		Std_ReturnType push(uint8_t value);
 
-		/*pull out the first element data and remove the node*/
-		//pull();
+		/*pull out the first element data Note: this is a continous operation*/
+		uint8_t pull();
 
 		/*search in the list and to get the ptr if there is a node hit*/
 		//fetch();
