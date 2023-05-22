@@ -18,7 +18,7 @@ typedef node_group* node_group_ptr;
 class link_list{
 	private:
 		/*create a temporily node for data store*/
-		node temp_node;
+		node_ptr temp_node;
 
 		/*the start of the link list*/
 		node_ptr HEAD;
@@ -41,10 +41,10 @@ class link_list{
 		link_list();
 	
 		/*create a link list which end with a customized data element*/
-		//link_list(value);
+		link_list(uint8_t value);
 
 		/*add a element to the end of the link list*/
-		//push();
+		Std_ReturnType push(uint8_t value);
 
 		/*pull out the first element data and remove the node*/
 		//pull();
