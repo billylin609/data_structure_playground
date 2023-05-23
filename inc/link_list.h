@@ -48,6 +48,7 @@ class link_list{
 		Std_ReturnType push(uint8_t value);
 
 		/*pull out the first element data Note: this is a continous operation*/
+		/*any operation will reset the pull feature starting from HEAD*/
 		uint8_t pull();
 
 		/*search in the list and to get the ptr if there is a node hit*/
